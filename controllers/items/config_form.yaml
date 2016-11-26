@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Item
+
+# Model Form Field configuration
+form: $/mesadev/inventory/models/item/fields.yaml
+
+# Model Class name
+modelClass: Mesadev\Inventory\Models\Item
+
+# Default redirect location
+defaultRedirect: mesadev/inventory/items
+
+# Create page
+create:
+    title: Create Item
+    redirect: mesadev/inventory/items/update/:id
+    redirectClose: mesadev/inventory/items
+
+# Update page
+update:
+    title: Edit Item
+    redirect: mesadev/inventory/items
+    redirectClose: mesadev/inventory/items
+
+# Preview page
+preview:
+    title: Preview Item

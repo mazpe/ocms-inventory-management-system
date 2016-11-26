@@ -1,0 +1,7 @@
+1.0.1: First version of Inventory
+1.0.2:
+      - Updated with a migration
+      - create_jobs_table.php
+      - create_items_table.php
+      - seed_items_table.php
+1.0.3: Backend widget integration

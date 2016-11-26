@@ -1,0 +1,25 @@
+{
+  "jets": {
+    "name": "Jets",
+    "items": {
+      "0": {
+        "year": "2008",
+        "make": "Gulfstream",
+        "model": "G200",
+        "serial": "204",
+        "registration": "N982MM",
+        "description": "Jet Speed Aviation Inc. is pleased to offer Gulfstream G200, Serial Number 204 to the marketplace for immediate sale. The Gulfstream G200 is a world class performer delivering intercontinental range, exceptional payload capability and low operating costs without sacrificing speed range or passenger amenities, making the G200 an excellent choice.",
+        "summary": "Total Airframe Hours Since New: 5627 - Total Airframe Landings Since New 3473"
+      },
+      "1": {
+        "year": "2007",
+        "make": "Gulfstream",
+        "model": "G200",
+        "serial": "176",
+        "registration": "N962MM",
+        "description": "Jet Speed Aviation Inc. is pleased to offer Gulfstream G200, Serial Number 176 to the marketplace for immediate sale. The Gulfstream G200 is a world class performer delivering intercontinental range, exceptional payload capability and low operating costs without sacrificing speed range or passenger amenities, making the G200 an excellent choice. ",
+        "summary": "Gulfstream Factory Maintenance Program - Total Airframe Hours Since New: 6022.8 - Total Airframe Landings Since New: 3648"
+      }
+    }
+  }
+}

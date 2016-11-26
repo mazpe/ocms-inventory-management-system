@@ -1,0 +1,34 @@
+<div class="report-widget">
+    <h3>Quick Item</h3>
+
+    <?=
+        Form::open([
+            'url'       => Backend::url('mesadev/inventory/items/store'),
+            'method'    => 'POST'
+        ]);
+    ?>
+    <div class="form-group">
+        <input class="form-control" type="text" name="title" placeholder="Title" required />
+    </div>
+
+    <div class="form-group">
+        <textarea class="form-control" name="description" id="" cols="30" rows="10" placeholder="You have something to say?"></textarea>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Submit" />
+        <a href="<?= Backend::url('mesadev/inventory/items/index') ?>">Manage your items</a>
+    </div>
+
+    <?= Form::close(); ?>
+
+    <br/>
+
+    <div class="pane">
+        <ul class="list-nostyle">
+            <?php foreach( $items as $item ): ?>
+            <li class="list-group-item"><?= $item->serial ?></li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+</div>

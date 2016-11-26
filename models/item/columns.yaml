@@ -1,0 +1,32 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    category:
+        label: Category
+        searchable: true
+    serial:
+        label: Serial
+        searchable: true
+    year:
+        label: Year
+        searchable: true
+    make:
+        label: Make
+        searchable: true
+    model:
+        label: Model
+        searchable: true
+    registration:
+        label: Registration
+        searchable: true
+    is_published:
+        label: Published
+        searchable: true
+    created_at:
+        label: Created
+        searchable: true

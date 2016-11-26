@@ -1,0 +1,126 @@
+fields:
+    id:
+        label: ID
+        disabled: true
+    serial:
+        label: Serial
+        readOnly: true
+    year:
+        label: Year
+        readOnly: true
+    make:
+        label: Make
+        readOnly: true
+    model:
+        label: Model
+        readOnly: true
+    registration:
+        label: Registration
+        readOnly: true
+tabs:
+    fields:
+        information:
+            label: Information
+            comment: General information for this Item
+            type: section
+            tab: Information
+        category:
+            label: Category
+            searchable: true
+            tab: Information
+            type: dropdown
+            options:
+                jets: Jets
+        serial:
+            label: Serial
+            searchable: true
+            tab: Information
+        year:
+            label: Year
+            searchable: true
+            tab: Information
+        make:
+            label: Make
+            searchable: true
+            tab: Information
+        model:
+            label: Model
+            searchable: true
+            tab: Information
+        registration:
+            label: Registration
+            searchable: true
+            tab: Information
+
+        details:
+            label: Details
+            comment: Detail information for this Item
+            type: section
+            tab: Details
+        description:
+            label: Description
+            searchable: true
+            type: richeditor
+            size: large
+            tab: Details
+        log:
+            label: Log
+            searchable: true
+            type: richeditor
+            size: large
+            tab: Details
+        engine:
+            label: Engine
+            searchable: true
+            type: richeditor
+            size: large
+            tab: Details
+        avionics:
+            label: Avionics
+            searchable: true
+            type: richeditor
+            size: large
+            tab: Details
+        features:
+            label: Features
+            searchable: true
+            type: richeditor
+            size: large
+            tab: Details
+        interior:
+            label: Interior
+            searchable: true
+            type: richeditor
+            size: large
+            tab: Details
+        exterior:
+            label: Exterior
+            searchable: true
+            type: richeditor
+            size: large
+            tab: Details
+        maintenance:
+            label: Maintenance
+            searchable: true
+            type: richeditor
+            size: large
+            tab: Details
+        inspections:
+            label: Inspections
+            searchable: true
+            type: richeditor
+            size: large
+            tab: Details
+
+        images:
+          label: Images
+          comment: Images for this Item
+          type: section
+          tab: Images
+        photos:
+            label: Photos
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            tab: Images
