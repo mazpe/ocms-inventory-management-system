@@ -4,7 +4,6 @@ use Mesadev\Inventory\Models\Item;
 use Illuminate\Support\Facades\Input;
 
 Route::post('/email_information', function() {
-
     $item_id = Input::get('item_id');
     $item = Item::find($item_id);
 
