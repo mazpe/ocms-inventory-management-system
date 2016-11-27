@@ -17,7 +17,7 @@ class FacebookJobs
         $item = Item::find($item_id);
 
         $linkData = [
-            'link' => 'http://ww2.jetspeedaviation.com/portfolio/'.$item_id,
+            'link' => 'http://'.env('DOMAIN').'/portfolio/'.$item_id,
             'message' => strip_tags($item->description),
         ];
 

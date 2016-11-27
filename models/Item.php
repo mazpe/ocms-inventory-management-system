@@ -78,17 +78,15 @@ class Item extends Model
         $file = "$this->serial.pdf";
         $full_filename = "$path/$file";
 
-        $url = 'http://jetspeedaviation.app/portfolio/'.$this->id;
+        $url = 'http://'.env('DOMAIN').'/portfolio/'.$this->id;
 
         $snappy->generate($url, $full_filename, [], $overwrite = true);
-
-
 
         // Submit Post to Facebook
         try {
             $this->postToFacebook();
         } catch(\Exception $e) {
-            Throw $e;
+            throw $e;
         }
 
     }
@@ -110,22 +108,6 @@ class Item extends Model
         Queue::push('\Mesadev\Inventory\Jobs\FacebookJobs@pagePostSubmit',
             [ 'action' => $action, 'item_id' => $this->id,'post_id' => "/$post_id"]
         );
-
-        return true;
-    }
-
-
-    private function submitTwitterPost() {
-        $tweet_status = substr(strip_tags($this->description), 0, 110) . '... - http://ww2.jetspeedaviation.com/profile/'. $this->id;
-
-        $twitter = App::make('Thujohn\Twitter\Twitter');
-        $tweet = $twitter->postTweet(['status' => $tweet_status, 'format' => 'json']);
-        $tweet = json_decode($tweet);
-
-        dd($tweet);
-        if ($tweet->id) {
-            $this->updateSocialMediaId('twitter', $tweet->id);
-        }
 
         return true;
     }
