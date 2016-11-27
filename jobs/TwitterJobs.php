@@ -11,7 +11,7 @@ class TwitterJobs
 
         $item = Item::find($item_id);
 
-        $tweet_status = substr(strip_tags($item->description), 0, 110) . '... - http://'.env('DOMAIN').'/portfolio/'. $item_id;
+        $tweet_status = substr(strip_tags($item->description), 0, 110) . '... - http://'.env('APP_URL').'/portfolio/'. $item_id;
 
         $twitter = App::make('Thujohn\Twitter\Twitter');
         $tweet = $twitter->postTweet(['status' => $tweet_status, 'format' => 'json']);
