@@ -74,7 +74,7 @@ class Item extends Model
         // PDF GENERATION
         $snappy = App::make('snappy.pdf');
 
-        $path = storage_path().'/app/brochures';
+        $path = storage_path().'/app/uploads/public/brochures';
         $file = "$this->serial.pdf";
         $full_filename = "$path/$file";
 
