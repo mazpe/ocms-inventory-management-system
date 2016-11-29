@@ -4,11 +4,11 @@
     {% for post in listingsInfo %}
     <div class="col-md-3 portfolio-item jets">
         <div class="picture">
-            <a class="image" href="{{ 'portfolio/' }}{{ post.id }}" title="Title">
+            <a class="image" href="{{ '/portfolio/' }}{{ post.id }}" title="Title">
                 <img src="{{ post.photos.first.getThumb(232, 180) }}" alt="" />
             </a>
             <div class="description">
-                <a href="{{ 'portfolio/project'|page }}" class="btn btn-info btn-block">
+                <a href="{{ '/portfolio/' }}{{ post.id }}" class="btn btn-info btn-block">
                     {{ post.year }} <br/> {{ post.make }} - {{ post.model }} <br/> SN: {{ post.serial }}
                 </a>
             </div>
