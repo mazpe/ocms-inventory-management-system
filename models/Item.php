@@ -55,20 +55,6 @@ class Item extends Model
         'photos' => 'System\Models\File'
     ];
 
-    public function afterCreate()
-    {
-        // SOCIAL MEDIA
-        // Submit Post to Twitter
-        try {
-            // Create job to submit to Facebook
-            Queue::push('\Mesadev\Inventory\Jobs\TwitterJobs@tweetPostSubmit',
-                [ 'item_id' => $this->id ]
-            );
-        } catch(\Exception $e) {
-            throw $e;
-        }
-    }
-
     public function afterSave()
     {
         // PDF GENERATION
@@ -82,9 +68,10 @@ class Item extends Model
 
         $snappy->generate($url, $full_filename, [], $overwrite = true);
 
-        // Submit Post to Facebook
+        // Submit Post to Facebook & Twitter
         try {
             $this->postToFacebook();
+            $this->postToTwitter();
         } catch(\Exception $e) {
             throw $e;
         }
@@ -112,4 +99,26 @@ class Item extends Model
         return true;
     }
 
+    private function postToTwitter()
+    {
+        if ($this->twitter_post_id) {
+            $post_id = $this->twitter_post_id;
+            // Create job to delete previous twitter post
+            Queue::push('\Mesadev\Inventory\Jobs\TwitterJobs@tweetPostDelete',
+                ['post_id' => $post_id]
+            );
+
+            // Create job to create twitter post
+            Queue::push('\Mesadev\Inventory\Jobs\TwitterJobs@tweetPostSubmit',
+                ['item_id' => $this->id]
+            );
+        } else {
+            // Create job to create twitter post
+            Queue::push('\Mesadev\Inventory\Jobs\TwitterJobs@tweetPostSubmit',
+                ['item_id' => $this->id]
+            );
+        }
+
+        return true;
+    }
 }

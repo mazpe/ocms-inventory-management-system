@@ -6,7 +6,7 @@ use Backend\Classes\Controller;
 use \Mesadev\Inventory\Models\Item;
 use Illuminate\Support\Facades\Input;
 use \Mesadev\Inventory\Models;
-use Rafie\Inventory\Plugin;
+use Mesadev\Inventory\Plugin;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Queue;
 
@@ -60,18 +60,13 @@ class Items extends Controller
             return "[EMPTY]";
     }
 
-    public function sendPDFLink()
-    {
-        dd('hello');
-    }
-
     public function onDelete()
     {
         foreach(post("checked") as $id) {
             $item = Item::find($id);
 
             // Delete PDF Brochures
-            $path = storage_path().'/app/brochures';
+            $path = storage_path().'/app/uploads/public/brochures';
             $file = "$item->serial.pdf";
             $full_filename = "$path/$file";
             File::delete($full_filename);
