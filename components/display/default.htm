@@ -53,6 +53,9 @@
                 <h3>Description</h3>
                 <p>{{ itemInfo.description | raw }}</p>
 
+                <h3>Log Summary</h3>
+                <p>{{ itemInfo.log | raw }}</p>
+
                 <h3>Engine Specifications</h3>
                 <p>{{ itemInfo.engine | raw }}</p>
 
@@ -72,10 +75,10 @@
                 <p>{{ itemInfo.maintenance | raw }}</p>
 
                 <h3>Inspection</h3>
-                <p>{{ itemInfo.inspection | raw }}</p>
+                <p>{{ itemInfo.inspections | raw }}</p>
 
                 <h3>Comments</h3>
-                <p>{{ itemInfo.interior | raw }}</p>
+                <p>{{ itemInfo.comments | raw }}</p>
             </div>
 
         </div>
