@@ -1,19 +1,16 @@
-<!-- start: Portfolio -->
-<div id="portfolioItems" class="row">
+<!-- AJAX enabled form -->
+<form method="post" data-request="onMakeChange">
 
-    {% for post in listingsInfo %}
-    <div class="col-md-3 portfolio-item jets">
-        <div class="picture">
-            <a class="image" href="{{ '/aircraft/' }}{{ post.id }}" title="Title">
-                <img src="{{ post.photos.first.getThumb(232, 180) }}" alt="" />
-            </a>
-            <div class="description">
-                <a href="{{ '/aircraft/' }}{{ post.id }}" class="btn btn-info btn-block">
-                    {{ post.year }} <br/> {{ post.make }} - {{ post.model }} <br/> SN: {{ post.serial }}
-                </a>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
+    <!-- Input two values -->
+    Make: <input name="make">
+    Model: <input name="model">
+    Year : <input name="year">
 
+    <!-- Action button -->
+    <button type="submit">Filter</button>
+
+</form>
+
+<div id="aircraftsListing">
+{% partial 'listing::aircrafts' %}
 </div>

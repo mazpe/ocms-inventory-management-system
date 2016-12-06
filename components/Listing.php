@@ -40,6 +40,26 @@ class Listing extends ComponentBase
         ];
     }
 
+    public function onMakeChange() {
+        $items = Item::where('category', 'jets');
+
+        if (post('make')) {
+            $items->where('make', post('make'));
+        }
+        if (post('model')) {
+            $items->where('model', post('model'));
+        }
+        if (post('year')) {
+            $items->where('year', post('year'));
+        }
+
+        $this->page['listingsInfo'] = $items->get();
+
+        return [
+            '#aircraftsListing' => $this->renderPartial('listing::aircrafts')
+        ];
+    }
+
     protected function loadListingData()
     {
         return json_decode(file_get_contents(__DIR__.'/../data/items.json'), true);
