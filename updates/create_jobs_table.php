@@ -1,4 +1,4 @@
-<?php namespace Mesadev\Inventory\Updates;
+<?php namespace IIS\Inventory\Updates;
 
 use October\Rain\Database\Updates\Migration;
 use Schema;

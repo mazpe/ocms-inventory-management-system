@@ -3,7 +3,7 @@
 
     <?=
         Form::open([
-            'url'       => Backend::url('mesadev/inventory/items/store'),
+            'url'       => Backend::url('iis/inventory/items/store'),
             'method'    => 'POST'
         ]);
     ?>
@@ -17,7 +17,7 @@
 
     <div class="form-group">
         <input type="submit" class="btn btn-primary" value="Submit" />
-        <a href="<?= Backend::url('mesadev/inventory/items/index') ?>">Manage your items</a>
+        <a href="<?= Backend::url('iis/inventory/items/index') ?>">Manage your items</a>
     </div>
 
     <?= Form::close(); ?>

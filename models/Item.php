@@ -1,4 +1,4 @@
-<?php namespace Mesadev\Inventory\Models;
+<?php namespace IIS\Inventory\Models;
 
 use League\Flysystem\Exception;
 use Model;
@@ -22,7 +22,7 @@ class Item extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'mesadev_inventory_items';
+    public $table = 'iis_inventory_items';
 
     /**
      * @var array Guarded fields
@@ -70,7 +70,7 @@ class Item extends Model
 
         // Submit Post to Facebook & Twitter
         try {
-            $this->postToFacebook();
+//            $this->postToFacebook();
             $this->postToTwitter();
         } catch(\Exception $e) {
             throw $e;
@@ -92,7 +92,7 @@ class Item extends Model
         }
 
         // Create job to submit to Facebook
-        Queue::push('\Mesadev\Inventory\Jobs\FacebookJobs@pagePostSubmit',
+        Queue::push('\IIS\Inventory\Jobs\FacebookJobs@pagePostSubmit',
             [ 'action' => $action, 'item_id' => $this->id,'post_id' => "/$post_id"]
         );
 
@@ -104,17 +104,17 @@ class Item extends Model
         if ($this->twitter_post_id) {
             $post_id = $this->twitter_post_id;
             // Create job to delete previous twitter post
-            Queue::push('\Mesadev\Inventory\Jobs\TwitterJobs@tweetPostDelete',
+            Queue::push('\IIS\Inventory\Jobs\TwitterJobs@tweetPostDelete',
                 ['post_id' => $post_id]
             );
 
             // Create job to create twitter post
-            Queue::push('\Mesadev\Inventory\Jobs\TwitterJobs@tweetPostSubmit',
+            Queue::push('\IIS\Inventory\Jobs\TwitterJobs@tweetPostSubmit',
                 ['item_id' => $this->id]
             );
         } else {
             // Create job to create twitter post
-            Queue::push('\Mesadev\Inventory\Jobs\TwitterJobs@tweetPostSubmit',
+            Queue::push('\IIS\Inventory\Jobs\TwitterJobs@tweetPostSubmit',
                 ['item_id' => $this->id]
             );
         }

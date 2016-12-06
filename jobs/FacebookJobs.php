@@ -1,7 +1,7 @@
-<?php namespace Mesadev\Inventory\Jobs;
+<?php namespace IIS\Inventory\Jobs;
 
 use Illuminate\Support\Facades\App;
-use Mesadev\Inventory\Models\Item;
+use IIS\Inventory\Models\Item;
 
 class FacebookJobs
 {

@@ -6,25 +6,25 @@
 name: Item
 
 # Model Form Field configuration
-form: $/mesadev/inventory/models/item/fields.yaml
+form: $/iis/inventory/models/item/fields.yaml
 
 # Model Class name
-modelClass: Mesadev\Inventory\Models\Item
+modelClass: IIS\Inventory\Models\Item
 
 # Default redirect location
-defaultRedirect: mesadev/inventory/items
+defaultRedirect: iis/inventory/items
 
 # Create page
 create:
     title: Create Item
-    redirect: mesadev/inventory/items/update/:id
-    redirectClose: mesadev/inventory/items
+    redirect: iis/inventory/items/update/:id
+    redirectClose: iis/inventory/items
 
 # Update page
 update:
     title: Edit Item
-    redirect: mesadev/inventory/items
-    redirectClose: mesadev/inventory/items
+    redirect: iis/inventory/items
+    redirectClose: iis/inventory/items
 
 # Preview page
 preview:

@@ -1,6 +1,6 @@
 <?php
 
-use Mesadev\Inventory\Models\Item;
+use IIS\Inventory\Models\Item;
 use Illuminate\Support\Facades\Input;
 
 Route::post('/email_information', function() {

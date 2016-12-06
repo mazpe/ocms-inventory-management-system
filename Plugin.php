@@ -1,4 +1,4 @@
-<?php namespace Mesadev\Inventory;
+<?php namespace IIS\Inventory;
 
 use System\Classes\PluginBase;
 use Backend\Facades\Backend;
@@ -54,8 +54,8 @@ class Plugin extends PluginBase
         //return []; // Remove this line to activate
 
         return [
-            'Mesadev\Inventory\Components\Listing' => 'listing',
-            'Mesadev\Inventory\Components\Display' => 'display',
+            'IIS\Inventory\Components\Listing' => 'listing',
+            'IIS\Inventory\Components\Display' => 'display',
         ];
     }
 
@@ -69,7 +69,7 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'mesadev.inventory.some_permission' => [
+            'iis.inventory.some_permission' => [
                 'tab' => 'Inventory',
                 'label' => 'Some permission'
             ],
@@ -86,9 +86,9 @@ class Plugin extends PluginBase
         return [
             'inventory' => [
                 'label'       => 'Inventory',
-                'url'         => Backend::url('mesadev/inventory/items'),
+                'url'         => Backend::url('iis/inventory/items'),
                 'icon'        => 'icon-pencil',
-                'permissions' => ['mesadev.inventory.*'],
+                'permissions' => ['iis.inventory.*'],
                 'order'       => 500,
 
                 'sideMenu' => [
@@ -111,7 +111,7 @@ class Plugin extends PluginBase
 
     public function registerReportWidgets(){
         return [
-            'Mesadev\Inventory\ItemWidget' => [
+            'IIS\Inventory\ItemWidget' => [
                 'label'     => 'Item CRUD Widget',
                 'context'   => 'dashboard'
             ]

@@ -1,4 +1,4 @@
-<?php namespace Mesadev\Inventory\Updates;
+<?php namespace IIS\Inventory\Updates;
 
 use October\Rain\Database\Updates\Migration;
 use Schema;
@@ -7,8 +7,8 @@ class CreateItemsTable extends Migration
 {
     public function up()
     {
-        if (!Schema::hasTable('mesadev_inventory_items')) {
-            Schema::create('mesadev_inventory_items', function ($table) {
+        if (!Schema::hasTable('iis_inventory_items')) {
+            Schema::create('iis_inventory_items', function ($table) {
                 $table->engine = 'InnoDB';
                 $table->increments('id');
                 $table->string('facebook_post_id')->nullable()->index();
@@ -41,6 +41,6 @@ class CreateItemsTable extends Migration
 
     public function down()
     {
-            Schema::dropIfExists('mesadev_inventory_items');
+            Schema::dropIfExists('iis_inventory_items');
     }
 }

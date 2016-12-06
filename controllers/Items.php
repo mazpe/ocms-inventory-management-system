@@ -1,12 +1,12 @@
-<?php namespace Mesadev\Inventory\Controllers;
+<?php namespace IIS\Inventory\Controllers;
 
 use Backend\Facades\Backend;
 use BackendMenu;
 use Backend\Classes\Controller;
-use \Mesadev\Inventory\Models\Item;
+use \IIS\Inventory\Models\Item;
 use Illuminate\Support\Facades\Input;
-use \Mesadev\Inventory\Models;
-use Mesadev\Inventory\Plugin;
+use \IIS\Inventory\Models;
+use IIS\Inventory\Plugin;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Queue;
 
@@ -74,14 +74,14 @@ class Items extends Controller
             // Create Job to delete Facebook Post
             if ($item->facebook_post_id)
             {
-                Queue::push('\Mesadev\Inventory\Jobs\FacebookJobs@pagePostDelete',
+                Queue::push('\IIS\Inventory\Jobs\FacebookJobs@pagePostDelete',
                     [ 'post_id' => $item->facebook_post_id]
                 );
             }
 
             if ($item->twitter_post_id)
             {
-                Queue::push('\Mesadev\Inventory\Jobs\TwitterJobs@tweetPostDelete',
+                Queue::push('\IIS\Inventory\Jobs\TwitterJobs@tweetPostDelete',
                     [ 'post_id' => $item->twitter_post_id ]
                 );
             }

@@ -1,6 +1,6 @@
-<?php namespace Mesadev\Inventory\Updates;
+<?php namespace IIS\Inventory\Updates;
 
-use Mesadev\Inventory\Models\Item;
+use IIS\Inventory\Models\Item;
 use Seeder;
 
 class SeedItemsTable extends Seeder

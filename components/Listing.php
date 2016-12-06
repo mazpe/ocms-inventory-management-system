@@ -1,12 +1,10 @@
-<?php namespace Mesadev\Inventory\Components;
+<?php namespace IIS\Inventory\Components;
 
 use Cache;
 use Cms\Classes\ComponentBase;
 use Request;
 use System\Classes\ApplicationException;
-use Mesadev\Inventory\Models\Item;
-
-
+use IIS\Inventory\Models\Item;
 
 class Listing extends ComponentBase
 {
@@ -26,6 +24,11 @@ class Listing extends ComponentBase
                 'title'             => 'Category',
                 'type'              => 'dropdown',
                 'default'           => 'Jets'
+            ],
+            'make' => [
+                'title'             => 'Make',
+                'type'              => 'string',
+                'placeholder'       => 'Manufacture'
             ],
             'items' => [
                 'title'             => 'Items',
@@ -63,7 +66,7 @@ class Listing extends ComponentBase
 
     public function onRun()
     {
-        $this->addCss('/plugins/mesadev/inventory/assets/css/listings.css');
+        $this->addCss('/plugins/iis/inventory/assets/css/listings.css');
 
         // TODO: return all items including categories
         $this->page['listingsInfo'] = Item::where('category', 'jets')->get();

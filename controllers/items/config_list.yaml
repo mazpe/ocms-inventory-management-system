@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/mesadev/inventory/models/item/columns.yaml
+list: $/iis/inventory/models/item/columns.yaml
 
 # Model Class name
-modelClass: Mesadev\Inventory\Models\Item
+modelClass: IIS\Inventory\Models\Item
 
 # List Title
 title: Manage Items
 
 # Link URL for each record
-recordUrl: mesadev/inventory/items/update/:id
+recordUrl: iis/inventory/items/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

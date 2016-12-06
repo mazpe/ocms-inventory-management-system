@@ -1,8 +1,8 @@
-<?php namespace Mesadev\Inventory;
+<?php namespace IIS\Inventory;
 
 use Backend\Facades\BackendAuth;
 use Backend\Classes\ReportWidgetBase;
-use Mesadev\Inventory\Models\Item;
+use IIS\Inventory\Models\Item;
 
 class ItemWidget extends ReportWidgetBase
 {

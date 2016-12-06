@@ -1,7 +1,7 @@
-<?php namespace Mesadev\Inventory\Components;
+<?php namespace IIS\Inventory\Components;
 
 use Cms\Classes\ComponentBase;
-use Mesadev\Inventory\Models\Item;
+use IIS\Inventory\Models\Item;
 
 class Display extends ComponentBase
 {
