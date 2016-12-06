@@ -21,7 +21,7 @@ Route::post('/email_information', function() {
         $message->to($vars['recipient_email'], $vars['recipient_name']);
     });
 
-    return Redirect::to('/portfolio/'. $item_id )->with('message', 'Email Sent');
+    return Redirect::to('/aircraft/'. $item_id )->with('message', 'Email Sent');
 });
 
 

@@ -64,7 +64,7 @@ class Item extends Model
         $file = "$this->serial.pdf";
         $full_filename = "$path/$file";
 
-        $url = 'http://'.env('APP_URL').'/portfolio/'.$this->id;
+        $url = 'http://'.env('APP_URL').'/aircraft/'.$this->id;
 
         $snappy->generate($url, $full_filename, [], $overwrite = true);
 
