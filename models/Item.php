@@ -70,7 +70,7 @@ class Item extends Model
 
         // Submit Post to Facebook & Twitter
         try {
-//            $this->postToFacebook();
+            $this->postToFacebook();
             $this->postToTwitter();
         } catch(\Exception $e) {
             throw $e;
