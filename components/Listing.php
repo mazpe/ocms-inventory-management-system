@@ -44,13 +44,13 @@ class Listing extends ComponentBase
         $items = Item::where('category', 'jets');
 
         if (post('make')) {
-            $items->where('make', post('make'));
+            $items->where('make', 'LIKE', '%'.post('make').'%');
         }
         if (post('model')) {
-            $items->where('model', post('model'));
+            $items->where('model', 'LIKE', '%'. post('model').'%');
         }
         if (post('year')) {
-            $items->where('year', post('year'));
+            $items->where('year', 'LIKE', '%'.post('year').'%');
         }
 
         $this->page['listingsInfo'] = $items->get();

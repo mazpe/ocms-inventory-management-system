@@ -2,21 +2,6 @@ fields:
     id:
         label: ID
         disabled: true
-    serial:
-        label: Serial
-        readOnly: true
-    year:
-        label: Year
-        readOnly: true
-    make:
-        label: Make
-        readOnly: true
-    model:
-        label: Model
-        readOnly: true
-    registration:
-        label: Registration
-        readOnly: true
 tabs:
     fields:
         information:
